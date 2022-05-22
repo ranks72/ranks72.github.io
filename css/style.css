@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header {
+    display: block;
+}
+
+#navigation {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: top 0.5s;
+}
+
+nav {
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    color: #ffffff;
+    padding: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transition: top 0.4s;
+}
+  
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-around;
+    font-size: 30px;
+}
+  
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+  
+nav ul li a:hover {
+    color: rgb(196, 1, 179);
+}
+  
+nav ul li a::after {
+    color: rgb(196, 1, 179);
+    border-bottom: 2px solidrgb(196, 1, 179);
+}
+
+.container {
+    max-width: 1180px;
+    margin: auto;
+}
+
+/* Menu Toggle */
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+  
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0.8;
+    left: -5px;
+    top: -3px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    transition: all 0.5s;
+}
+  
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+  
+  /* Menu HAmburger */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+  
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+  
+.menu-toggle input:checked~span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+  
+.menu-toggle input:checked~span:nth-child(3) {
+    transform: scale(0);
+    opacity: 0;
+}
+  
+.menu-toggle input:checked~span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+/*homepage*/
+.homepage {
+    min-height: 100vh;
+    background-image: url("../assets/amongus.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.homepage .background {
+    min-height: 100vh;  
+}
+
+.container .homepage_image {
+    padding-top: 100px;
+    font-size: 0; 
+    padding-bottom: 40px;
+}
+
+.homepage .content_homepage {
+    align-items: center;
+    display: flex;
+    max-width: 100%;
+    flex: 0 0 100%;
+    flex-wrap: wrap;
+}
+  
+.homepage .content_homepage .detail {
+    flex: 0 0 50%;
+    padding: 35px;
+    max-width: 50%;
+    border-left: 7px solid rgb(204, 235, 5);
+}
+ 
+.homepage .content_homepage .detail h6 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.homepage .content_homepage .detail h1 {
+    color: rgb(40, 241, 13);
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+  
+.homepage .content_homepage .detail h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    color: #bfbfbf;
+    font-weight: 500;
+}
+
+/*about me*/
+.about-me {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image: url(../assets/bck_about.jpg);
+}
+  
+.about-me .about-content {
+    background-color: rgb(20, 15, 20);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.position-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.about-me .about-content .image {
+    flex: 0 0 33%;
+    max-width: 30%;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+  
+.about-me .about-content .image img {
+    width: 100%;
+    display: block;
+}
+ 
+.about-me .about-content .text {
+    flex: 0 0 66%;
+    max-width: 70%;
+}
+ 
+.about-me .about-content .text h4 {
+    font-size: 50px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 10px;
+    margin: 5px;
+    color: rgb(9, 79, 230);
+}
+ 
+.about-me .about-content .text h6 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 0 5px;
+    color: #ffbd33;
+}
+
+.about-me .about-content .text p {
+    text-align: left;
+    padding : 5px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #bfbfbf;
+}
+
+.about-me .about-content .text .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.about-me .about-content .text .content .information {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    flex: 0 0 calc(50% - 20px);
+    padding: 10px;
+    border-bottom: 1px dashed #ffffff;
+}
+
+.about-me .about-content .text .content .information label {
+    padding: 5px;
+    color: #fffc33;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/*kegiatan*/
+
+.kegiatan {
+    position: relative;
+    padding: 50px 0 50px;
+    text-align: center;
+    background-position: center;
+    background-size: cover; 
+}
+  
+.kegiatan .box-text {
+    margin-bottom: 50px;
+    padding-bottom: 50px;
+    font-size: 50px;
+    color: rgb(82, 5, 206);
+}
+  
+.list-kegiatan {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 70px; 
+}
+  
+.content_kegiatan {
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+     
+}
+.content_kegiatan .kegiatan_img {
+    position: relative;
+    display: block;
+    font-size: 0; 
+}
+
+/*footer*/
+.footer {
+    background-color: #161616;
+    background-image: url("../assets/footer.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    padding:50px;
+}
+  
+.footer h1 {
+    color: white;
+    font-size: 2em;
+}
+.footer a {
+    color: #bfbfbf;
+}
+  
+.sosmed .fa {
+    padding: 30px 50px 0 0;
+    font-size: 1.8em;
+    text-align: center;
+}
+  
+.sosmed a:hover {
+    color: white;
+}
